@@ -1,0 +1,18 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.navbar-brand {
+  background-color: rgb(196, 34, 82);
+}
+
+
+.table-dh .form{
+   margin-left: 30%;
+}
+

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRÁI CÂY SẠCH</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="font/css/all.min.css">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="admin.html">
+    <i class="fa-solid fa-user-shield"></i>_Admin</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-red w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="index.html">Thoát
+        <i class="fa-solid fa-share"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard-donhang.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-shop"></i>
+              Quản Lý Đơn Hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard-sanpham.html">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <i class="fa-solid fa-shop"></i>
+              Quản Lý Sản Phẩm
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard-khachhang.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-user-gear"></i>
+              Quản Lý Khách Hàng
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard-doitac.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-handshake"></i>
+              Quản Lý Đối Tác
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard-tinnhan.html">
+              <span data-feather="users" class="align-text-bottom"></span>
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              Tin Nhắn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              <i class="fa-solid fa-gears"></i>
+              Cài Đặt
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Quản Trị</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar" class="align-text-bottom"></span>
+            Công Cụ
+          </button>
+        </div>
+      </div>
+
+      <h2 style="color: blue;">Quản Lý Đơn Hàng</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th id="ma-dh" scope="col">Mã</th>
+              <th id="ten-dh" scope="col">Tên</th>
+              <th id="sl-dh" scope="col">Số Lượng</th>
+              <th id="tien-dh" scope="col">Thành Tiền</th>
+              <th id="sdt-dh" scope="col">Số Điện Thoại</th>
+              <th id="dc-dh" scope="col">Địa Chỉ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A01</td>
+              <td>Dũng</td>
+              <td>3kg/Cam</td>
+               <td>30.000đ</td>
+              <td>12345678</td>
+              <td>Hà Nam</td>
+            </tr>
+            <tr>
+              <td>A02</td>
+              <td>Duy</td>
+              <td>2kg/Nho</td>
+              <td>40.000đ</td>
+              <td>0123456</td>
+              <td>Hà Nội</td>
+            </tr>
+            <tr>
+              <td>A04</td>
+              <td>Hưng</td>
+              <td>1kg/Chuối</td>
+              <td>10.000đ</td>
+              <td>23456</td>
+              <td>Hưng yên</td>
+            </tr>
+            
+           
+          </tbody>
+        </table id ="table-dh">
+        <div class="from" style="margin-left: 100px;">
+          <div class="from-group">
+            <label for="ma">Mã</label>
+            <input type="text" id="ma" class="from-button" style="margin-left: 54px;">
+            <div class="error-message"></div>
+          </div>
+          <div class="from-group">
+            <label for="ten">Tên</label>
+            <input type="text" id="ten" class="from-button"style="margin-left: 52px;">
+            <div class="error-message"></div>
+          </div>
+          <div class="from-group">
+            <label for="so-luong">Số Lượng</label>
+            <input type="text" id="sl" class="from-button"style="margin-left: 10px;">
+            <div class="error-message"></div>
+          </div>
+          <div class="from-group">
+            <label for="thanh-tien">Thành Tiền</label>
+            <input type="text" id="t-tien" class="from-button">
+            <div class="error-message"></div>
+          </div>
+          <div class="from-group">
+            <label for="so-dien-thoai">SĐT</label>
+            <input type="text" id="sdt" class="from-button"style="margin-left: 50px;">
+            <div class="error-message"></div>
+          </div>
+          <div class="from-group">
+            <label for="dia-chi">Địa Chỉ</label>
+            <input type="text" id="dc" class="from-button"style="margin-left: 30px;">
+            <div class="error-message"></div>
+          </div>
+        </div>
+</table>
+        <div class="btn1" style="float:right;font-size :100px;padding-right: 45%; ">
+          <button type="button" id="btn-them" class="btn btn-primary">Thêm</button>
+        <button type="button" id="btn-sua" class="btn btn-success">Sửa</button>
+        <button type="button" id="btn-xoa" class="btn btn-danger">Xóa</button>
+        </div>
+      </div>
+    </main>
+    <script src="js/them.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>
