@@ -1,6 +1,7 @@
 const ACCOUNT_ADMIN = [
-    { email: "admin@gmail.com", password: "12345" },
-    { email: "admin1@gmail.com", password: "12345" },
+    { email: "admin@gmail.com", password: "123" },
+    { email: "admin1@gmail.com", password: "123" },
+    { email: "admin2@gmail.com", password: "123" }
 ]
 
 window.addEventListener('DOMContentLoaded', (event) => {
