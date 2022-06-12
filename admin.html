@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="font/css/all.min.css">
     <style>
         *{
             margin: 0;
@@ -16,7 +17,7 @@
             margin: 0 auto;
         }
         body{
-            background-color: rgb(7, 88, 61);
+            background-image: linear-gradient(crimson 30%, rgb(0, 130, 11) 55%, rgb(137, 130, 238) 80%);
         }
         .contenar{
             width: 450px;
@@ -46,17 +47,37 @@
             height: 90px;
             margin-left: 150px;
         }
-        .contenar a button{
+        .contenar .quanly button{
             font-size: 35px;
             margin-top: 20px;
-            margin-left: 160px;
+            margin-left: 20px;
             background-color: yellow;
             border-radius: 10px;
         }
-        .contenar a button:hover{
-            background-color: red;
+        .contenar .quanly .fa-solid{
+            font-size: 30px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        .contenar .quanly button:hover{
+            background-color: rgb(142, 122, 231);
             border-radius: 10px;
         }
+        .contenar  .exit button{
+            font-size: 35px;
+            margin-left: 80px;
+            background-color: rgb(255, 255, 0);
+            border-radius: 10px;
+        }
+        .contenar .exit .fa-solid{
+            font-size: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .contenar .exit button:hover{
+            background-color: red;
+        }
+
     </style>
 </head>
 <body>
@@ -69,7 +90,8 @@
         <p>Chức Danh: Giám Đốc</p><br>
         <p>Số Điện Thoại: 0829214822</p><br>
         <p>Email: vehoang2k2@gmail.com</p><br>
-        <a href="dashboard-donhang.html"><button>Thoát</button></a>
+        <a class="quanly" href="dashboard-donhang.html"><button><i class="fa-solid fa-briefcase"></i>Quản Lý</button></a>
+        <a class="exit" href="index.html"><button>Thoát<i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
     </div>
 </body>
 </html>

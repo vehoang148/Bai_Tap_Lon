@@ -8,11 +8,21 @@ body {
 }
 
 .navbar-brand {
-  background-color: rgb(196, 34, 82);
+  background-color: rgb(37, 34, 196);
+  margin-right: 0%;
+}
+
+.navbar-nav{
+  background-color: red;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #000;
+}
+
+.container-fluid{
+  background-color: rgb(233, 221, 221);
 }
 
 
-.table-dh .form{
-   margin-left: 30%;
-}
 

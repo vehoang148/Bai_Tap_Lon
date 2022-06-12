@@ -101,16 +101,28 @@
               <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
               <label class="form-check-label" for="paypal">Chuyển Khoản</label>
             </div>
+            <div class="row gy-3">
+              <div class="col-md-6">
+                <label for="cc-name" class="form-label">Họ Và Tên</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="VD: Hoàng Đình Dũng" required>
+              </div>
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Ngân Hàng</label>
+                <input type="text" class="form-control" id="cc-nganhang" placeholder="VD: VietinBank" required>
+              </div>
           </div>
-
+              <div class="col-md-6">
+                <label for="cc-number" class="form-label">Số Thẻ Ngân Hàng</label>
+                <input type="text" class="form-control" id="cc-the" placeholder="VD: 123456789" required>
+              </div>
+          </div>
           <hr class="my-4">
 
-          <button class="w-100 btn btn-success btn-lg" type="submit">Thanh Toán</button>
+          <button class="w-100 btn btn-success btn-lg" id="btn-thanhtoan" type="submit">Thanh Toán</button>
         </form>
       </div>
     </div>
   </main>
-
   <section class="container-fluid footer_section">
     <p>
       Copyright &copy; 2022 All Rights Reserved By
@@ -118,7 +130,6 @@
     </p>
   </section>
 </div>
-
     <script src="js/bootstrap.js"></script>
   </body>
 </html>
