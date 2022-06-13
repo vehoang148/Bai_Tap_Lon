@@ -7,6 +7,7 @@
 body {
   color: #000000;
   background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*shop*/
@@ -85,8 +86,6 @@ body {
   height: auto;
 }
 
-.header_section {}
-
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
@@ -98,7 +97,7 @@ body {
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 30px;
-  color: #343434;
+  color: #582d2d;
   text-align: center
 }
 
@@ -220,7 +219,6 @@ a:focus {
   font-size: 18px;
   color: green;
 }
-
 /* end slider */
 
 /* service  */
@@ -250,7 +248,7 @@ a:focus {
 .service_section .card:hover::after {
   background-color: #fc5d35;
 }
-/* end service  */
+/* end service */
 
 /* tasty */
 .tasty_section {
@@ -271,7 +269,7 @@ a:focus {
   color: #ffffff;
   text-transform: uppercase;
 }
-/* end tasty  */
+/* end tasty */
 
 /* client */
 .client_container {
@@ -287,6 +285,14 @@ a:focus {
 
 .client_img-box img {
   width: 100%
+}
+
+.custom_heading{
+  color:red;
+}
+
+.custom_heading:hover{
+  color: greenyellow;
 }
 
 .client_container h3 {

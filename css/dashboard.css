@@ -21,7 +21,40 @@ body {
 }
 
 .container-fluid{
-  background-color: rgb(233, 221, 221);
+  background-color: rgb(255, 255, 255);
+}
+
+.header {
+  background-color: #5900ff; 
+  margin-top: 20px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  padding: 8px 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-wrapper {
+  border: 1px solid rgba(0, 0, 0, .1);
+  padding: 16px;
+}
+
+.row-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+@media screen and (min-width: 720px) {
+   .row-wrapper {
+    grid-template-columns: 66% 34%;
+  }
+
+  .aside {
+    padding-left: calc(14px * 2); 
+  }
+
 }
 
 

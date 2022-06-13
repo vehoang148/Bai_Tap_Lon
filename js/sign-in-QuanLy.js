@@ -22,7 +22,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         if (accept) {
             location.href = "admin.html";
         } else {
-            alert("Email hoặc mật khẩu không đúng - Xin hãy nhập lại :))")
+            confirm("Email hoặc mật khẩu không đúng - Xin hãy nhập lại :))")
+            
         }
     }
 });
