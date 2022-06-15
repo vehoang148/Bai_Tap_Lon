@@ -1,19 +1,42 @@
-var data=[];
+var data=[
+    { 
+        ID:"12",
+        NAME:"Duy",
+        COMPANY:"Cam",
+        AMOUNT:2,
+        PRICE:20000,
+        PHONE:"09292922",
+        ADDRESS:"Hà Nam"
+    },
+    { 
+        ID:"13",
+        NAME:"Dũng",
+        COMPANY:"Táo",
+        AMOUNT:3,
+        PRICE:30000,
+        PHONE:"09292922",
+        ADDRESS:"Hà Nam"
+    },
+];
 
 //add
 function add()
 {
+    
     var id = document.getElementById("form-id").value
     var name = document.getElementById("form-name").value
-    var buy = document.getElementById("form-buy").value
     var price = document.getElementById("form-price").value
     var phone = document.getElementById("form-phone").value
     var address = document.getElementById("form-address").value
+    var company = document.getElementById("form-company").value
+    var amount = document.getElementById("form-amount").value
 
-    var item = {    
+    var item = {  
+
         ID:id,
         NAME:name,
-        BUY:buy,
+        COMPANY:company,
+        AMOUNT:amount,
         PRICE:price,
         PHONE:phone,
         ADDRESS:address
@@ -39,6 +62,7 @@ function render(){
     <th>MÃ</th>
     <th>TÊN</th>
     <th>MUA</th>
+    <th>SỐ LƯỢNG</th>
     <th>THÀNH TIỀN</th>
     <th>SỐ ĐIỆN THOẠI</th>
     <th>ĐỊA CHỈ</th>
@@ -51,7 +75,8 @@ function render(){
           <td>${order++}</td>
           <td>${data[i].ID}</td>
           <td>${data[i].NAME}</td>
-          <td>${data[i].BUY}</td>
+          <td>${data[i].COMPANY}</td>
+          <td>${data[i].AMOUNT}</td>
           <td>${data[i].PRICE}</td>
           <td>${data[i].PHONE}</td>
           <td>${data[i].ADDRESS}</td>
@@ -60,13 +85,17 @@ function render(){
         </tr>`
     }
     document.getElementById("render").innerHTML = table;
+    localStorage.setItem('reder', JSON.stringify([1,2]))
+    window.localStorage.getItem('render');
+
 }
 
 function clear()
 {
     var id = document.getElementById("form-id").value=""
     var name = document.getElementById("form-name").value=""
-    var buy = document.getElementById("form-buy").value=""
+    var company = document.getElementById("form-company").value=""
+    var amount = document.getElementById("form-amount").value=""
     var price = document.getElementById("form-price").value=""
     var phone = document.getElementById("form-phone").value=""
     var address = document.getElementById("form-address").value=""
@@ -81,7 +110,8 @@ function editItem(x)
         {
             var id = document.getElementById("form-id").value=data[i].ID;
             var name = document.getElementById("form-name").value=data[i].NAME
-            var buy = document.getElementById("form-buy").value=data[i].BUY
+            var company = document.getElementById("form-company").value=data[i].COMPANY
+            var amount = document.getElementById("form-amount").value=data[i].AMOUNT        
             var price = document.getElementById("form-price").value=data[i].PRICE
             var phone = document.getElementById("form-phone").value=data[i].PHONE
             var address = document.getElementById("form-address").value=data[i].ADDRESS

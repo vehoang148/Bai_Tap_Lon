@@ -17,25 +17,21 @@
 <body class="text-center">
   
 <main class="form-signin w-100 m-auto">
-  <form >
+  <form onsubmit="signIn()">
 
     <div class="close">
       <a href="index.html"><button type="button" class="btn-close"></button></a>
     </div>
-
     <a href="index.html"><img class="mb-4" src="images/logo.png" alt="" width="72" height="57"></a>
     <h1 class="h3 mb-3 fw-normal">ĐĂNG NHẬP</h1>
-
     <div class="form-floating">
-      <input id="tb-email-login" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-      <label for="floatingInput">Email</label>
+      <input id="tb-email-login" type="email" class="form-control"  placeholder="name@example.com" required>
+      <label for="Email-signIn">Email</label>
     </div>
-
     <div class="form-floating">
-      <input id="tb-password-login" type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-      <label for="floatingPassword">Mật Khẩu</label>
+      <input id="tb-password-login" type="password" class="form-control"  placeholder="Password" required>
+      <label for="Password-signIn">Mật Khẩu</label>
     </div>
-
     <div class="checkbox mb-3">
       <label>
         <input type="checkbox" value="remember-me"> Nhớ Tài Khoản
@@ -51,7 +47,32 @@
 
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.min.js"></script>
-<script src="js/sign-in-Admin.js"></script>
+
+<script>
+  function signIn(e)
+{
+    event.preventDefault();
+    var email = document.getElementById("tb-email-login").value;
+    var password = document.getElementById("tb-password-login").value;
+    var user = localStorage.getItem(email);
+    var data = JSON.parse(user);
+    if(user==null)
+    {
+        alert("Chưa Đăng Ký Tài Khoản!");
+    }
+    else if(email == "dung@gmail.com" && password == "123",email == "dung1482@gmail.com" && password == "123")
+    {
+      alert("Đăng Nhập Trang Quản Trị Thành Công")
+      window.location.href = "admin.html";
+    }
+    else if(email == data.email && password == data.password)
+    {
+        alert("Dăng Nhập Thành Công");
+        window.location.href = "index.html"
+    }
+    
+}
+</script>
 
   </body>
 </html>
