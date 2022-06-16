@@ -11,15 +11,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./font/css/all.min.css">
     <style>
-      .table-responsive .btn1{
-        margin-left: 200px;
-        float:left;
-        font-size :200px;
-        margin-bottom: 40%;
-        
+
+      .change_password{
+        border: 3px solid greenyellow;
+        width: 400px;
+        height: 400px;
+        margin-top: 80px;
+        margin-left: 15%;
+        background-color: aquamarine;
+        border-radius: 10px;
       }
-      .table-responsive .btn1 .btn{
-        font-size: 35px;
+      .change_password h2{
+        text-align: center;
+        color: green;
+        margin-top: 10px;
+      }
+      .change_password p{
+        color: rgb(250, 6, 6);
+        font-size: 20px;
+      }
+      .change_password button{
+        margin-top: 30px;
+        font-size: 23px;
+        margin-left: 30%;
+        border-radius: 8px;
+        background-color: blueviolet;
+      }
+      .change_password button:hover{
+        background-color: cadetblue;
       }
 
     </style>
@@ -85,25 +104,47 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="dashboard-caidat.html">
+            <a class="nav-link" href="dashboard-doimatkhau.html">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
               <i class="fa-solid fa-gears"></i>
-              Cài Đặt
+              Đổi Mật Khẩu
             </a>
           </li>
         </ul>
       </div>
     </nav>
+<form class="change_password" onsubmit="password()" >
+  <div class="container">
+    <h2>ĐỔI MẬT KHẨU</h2>
+    <p>Email</p>
+    <input id="email-change" type="email" placeholder="" required>
+    <p>Mật Khẩu Cũ</p>
+    <input id="password1" type="password" required>
+    <p>Mật Khẩu Mới</p>
+    <input id="password2" type="password" required>
+    <br>
+    <button id="btn-change">Đổi Mật Khẩu</button>
+  </div>
+</form>
+   <script>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <br>
-      <h2 style="color: blue;">Cài Đặt</h2>
-      <div class="table-responsive">
-        <div class="btn1">
-          <button type="button" class="btn btn-outline-primary">Đổi mật khẩu</button>
-        </div>
-      </div>
-    </main>
-    <script src="../js/bootstrap.js"></script>
+function password(e){
+    event.preventDefault();
+    var email = document.getElementById("email-change").value;
+    var password1 =document.getElementById("password1").value;
+    var password2 = document.getElementById("password2").value;
+    var user = {
+        email:email,
+        password2:password2,
+    };
+    var json = JSON.stringify(user);
+    if(email != json.email && password2 != json.password2)
+    {
+      localStorage.setItem(email, json);
+      alert("Đổi mật khẩu thành công !"); 
+    } 
+}
+   </script>
+    <script src="./js/bootstrap.js"></script>
   </body>
 </html>

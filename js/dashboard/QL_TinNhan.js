@@ -1,4 +1,19 @@
-var data=[];
+var data=[
+    {
+        ID:"1",
+        NAME:"Dũng",
+        PHONE:0829214811,
+        ADDRESS:"Nam Định",
+        CONTENT:"Hàng ngon quá"
+    },
+    {
+        ID:"2",
+        NAME:"Duy",
+        PHONE:0829218888,
+        ADDRESS:"Hà Nam",
+        CONTENT:"Hàng đẳng cấp quá"
+    }
+];
 
 //add
 function add()
@@ -30,18 +45,20 @@ function add()
     clear();
 }
 
-function render(){
+function render()
+{
     let order =1;
     table = `<tr>
     <th>STT</th>
-    <th>MÃ</th>
-    <th>TÊN</th>
-    <th>SỐ ĐIỆN THOẠI</th>
-    <th>ĐỊA CHỈ</th>
-    <th>NỘI DUNG</th>
-    <th>SỬA</th>
-    <th>XÓA</th>
+    <th>Mã</th>
+    <th>Tên</th>
+    <th>Số Điện Thoại</th>
+    <th>Địa Chỉ</th>
+    <th>Nội Dung</th>
+    <th>Sửa</th>
+    <th>Xóa</th>
     </tr>`
+
     for(let i=0;i<data.length;i++)
     {
         table += `<tr>

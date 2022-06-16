@@ -1,4 +1,12 @@
-var data=[];
+var data=[
+    {
+        ID:12,
+        NAME:"name",
+        PHONE:1234,
+        EMAIL:"email",
+        ADDRESS:"address"
+    }
+];
 
 //add
 function add()
@@ -36,13 +44,13 @@ function render(){
     let order =1;
     table = `<tr>
     <th>STT</th>
-    <th>MÃ</th>
-    <th>TÊN</th>
-    <th>SỐ ĐIỆN THOẠI</th>
-    <th>EMAIL</th>
-    <th>ĐỊA CHỈ</th>
-    <th>SỬA</th>
-    <th>XÓA</th>
+    <th>Mã</th>
+    <th>Tên</th>
+    <th>Số Điện Thoại</th>
+    <th>Email</th>
+    <th>Địa Chỉ</th>
+    <th>Sửa</th>
+    <th>Xóa</th>
     </tr>`
     for(let i=0;i<data.length;i++)
     {

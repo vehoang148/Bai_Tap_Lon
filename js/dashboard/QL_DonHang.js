@@ -1,6 +1,6 @@
 var data=[
     { 
-        ID:"12",
+        ID:"1",
         NAME:"Duy",
         COMPANY:"Cam",
         AMOUNT:2,
@@ -9,20 +9,28 @@ var data=[
         ADDRESS:"Hà Nam"
     },
     { 
-        ID:"13",
+        ID:"2",
         NAME:"Dũng",
         COMPANY:"Táo",
         AMOUNT:3,
         PRICE:30000,
+        PHONE:"082929223",
+        ADDRESS:"Nam Định"
+    },
+    { 
+        ID:"3",
+        NAME:"Dũng",
+        COMPANY:"Táo",
+        AMOUNT:1.5,
+        PRICE:25000,
         PHONE:"09292922",
-        ADDRESS:"Hà Nam"
+        ADDRESS:"Hà Nội"
     },
 ];
 
 //add
 function add()
 {
-    
     var id = document.getElementById("form-id").value
     var name = document.getElementById("form-name").value
     var price = document.getElementById("form-price").value
@@ -31,8 +39,8 @@ function add()
     var company = document.getElementById("form-company").value
     var amount = document.getElementById("form-amount").value
 
-    var item = {  
-
+    var item = 
+    {  
         ID:id,
         NAME:name,
         COMPANY:company,
@@ -40,9 +48,8 @@ function add()
         PRICE:price,
         PHONE:phone,
         ADDRESS:address
-    }
-
-    let index = data.findIndex((c)=>c.ID==item.ID)
+    }        
+    var index = data.findIndex((c)=>c.ID==item.ID)
     if(index>=0)
     {
         data.splice(index,1,item)
@@ -56,18 +63,18 @@ function add()
 }
 
 function render(){
-    let order =1;
+    let order = 1;
     table = `<tr>
-    <th>STT</th>
-    <th>MÃ</th>
-    <th>TÊN</th>
-    <th>MUA</th>
-    <th>SỐ LƯỢNG</th>
-    <th>THÀNH TIỀN</th>
-    <th>SỐ ĐIỆN THOẠI</th>
-    <th>ĐỊA CHỈ</th>
-    <th>SỬA</th>
-    <th>XÓA</th>
+    <th>Stt</th>
+    <th>Mã</th>
+    <th>Tên</th>
+    <th>Mua</th>
+    <th>Số Lượng</th>
+    <th>Thành Tiền</th>
+    <th>Số Điện Thoại</th>
+    <th>Địa Chỉ</th>
+    <th>Sửa</th>
+    <th>Xóa</th>
     </tr>`
     for(let i=0;i<data.length;i++)
     {
@@ -76,8 +83,8 @@ function render(){
           <td>${data[i].ID}</td>
           <td>${data[i].NAME}</td>
           <td>${data[i].COMPANY}</td>
-          <td>${data[i].AMOUNT}</td>
-          <td>${data[i].PRICE}</td>
+          <td>${data[i].AMOUNT}/kg</td>
+          <td>${data[i].PRICE}/đ</td>
           <td>${data[i].PHONE}</td>
           <td>${data[i].ADDRESS}</td>
           <th><button onclick="editItem(${data[i].ID})">SỬA</button></th>
@@ -85,9 +92,6 @@ function render(){
         </tr>`
     }
     document.getElementById("render").innerHTML = table;
-    localStorage.setItem('reder', JSON.stringify([1,2]))
-    window.localStorage.getItem('render');
-
 }
 
 function clear()
@@ -104,6 +108,7 @@ function clear()
 //edit
 function editItem(x)
 {
+    
     for(let i=0;i<data.length;i++)
     {
         if(data[i].ID==x)
@@ -131,5 +136,10 @@ function deleteItem(x)
             render();
         }
     }
+    clear();
 }
+function search()
+{
+    var search = document.getElementById("search-input").value;
+};
 

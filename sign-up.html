@@ -26,15 +26,20 @@
             <div class="modal-body p-5 pt-0" >
               <form class="" onsubmit="signUp()">
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control rounded-3" id="Email-SignUp" placeholder="name@example.com">
+                  <input type="email" class="form-control rounded-3" id="Email-SignUp" placeholder="name@example.com" required>
                   <label for="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="password" class="form-control rounded-3" id="Password-SignUp" placeholder="Password" required>
                   <label for="floatingPassword">Mật Khẩu</label>
                 </div>
-                <a href="login.html"><button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Đăng Ký</button></a>
-                <hr class="lg-4">
+                <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Đăng Ký</button>
+                <ul class="navbar-nav" style="margin-left: 30%;color: rgb(60, 9, 201);">
+                  <li class="nav-item ">
+                    <a class="nav-link" href="sign-in.html" style="font-size: 20px;">---> Đăng Nhập <---</a>
+                  </li>
+                </ul>
+                <hr>
                 <h2 class="fs-5 fw-bold mb-3">Sử Dụng Bên Thứ 3</h2>
                 <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
                   <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"/></svg>
@@ -49,8 +54,28 @@
           </div>
         </div>
       </div>
-         <script src="js/dang_ky.js"></script>
-      <script src="./js/bootstrap.js"></script>
-      <script src="./js/jquery.min.js"></script>
+<script>
+   function signUp(e){
+    event.preventDefault();
+    var email = document.getElementById("Email-SignUp").value;
+    var password = document.getElementById("Password-SignUp").value;
+    var user = {
+        email:email,
+        password:password
+    };
+    var json = JSON.stringify(user);
+    if(email == json.email && password == json.password)
+    {
+      alert("Tài khoản này đã tồn tại !");
+    }
+    else if(email != json.email && password != json.password)
+    {
+      localStorage.setItem(email, json);
+      alert("Đăng ký thành công !");  
+    }  
+}
+</script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
 </body>
 </html>

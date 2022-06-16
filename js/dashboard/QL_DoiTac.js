@@ -30,13 +30,14 @@ function add()
 }
 
 function render(){
-    let order =1;
+    let order = 1;
+
     table = `<tr>
     <th>STT</th>
-    <th>MÃ</th>
-    <th>TÊN</th>
-    <th>ĐỊA CHỈ</th>
-    <th>SỐ ĐIỆN THOẠI</th>
+    <th>Mã</th>
+    <th>Tên</th>
+    <th>Địa Chỉ</th>
+    <th>Số Điện Thoại</th>
     <th>Sửa</th>
     <th>Xóa</th>
     </tr>`
