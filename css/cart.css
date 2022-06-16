@@ -10,6 +10,7 @@ html{
 	cursor: pointer;
 
 }
+
 .shopping-cart .summary button{
 	margin-top: 10%;
 	margin-left: 20%;
@@ -19,6 +20,9 @@ html{
 }
 .shopping-cart .summary button:hover{
 	background-color: brown;
+}
+.shopping-cart .container .block-heading{
+	color: blue;
 }
 
 
