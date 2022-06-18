@@ -138,6 +138,7 @@ function deleteItem(x)
     }
     clear();
 }
+//search
 function search()
 {
     var search = document.getElementById("search-input").value;
