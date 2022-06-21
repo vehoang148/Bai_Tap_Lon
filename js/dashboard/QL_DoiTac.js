@@ -1,13 +1,24 @@
-var data=[];
+var data=[
+    {
+        ID:"D21",
+        NAME:"Thành",
+        ADDRESS:"Hà Nam",
+        PHONE:7482939238219
+    },
+    {
+        ID:"S13",
+        NAME:"Duy Thành",
+        ADDRESS:"Nam Hà",
+        PHONE:34747239172397
+    }
+];
 
-//add
 function add()
 {
-    var id = document.getElementById("form-id").value
-    var name = document.getElementById("form-name").value
-    var address = document.getElementById("form-address").value
-    var phone = document.getElementById("form-phone").value
-
+    var id = document.getElementById("form-id").value;
+    var name = document.getElementById("form-name").value;
+    var address = document.getElementById("form-address").value;
+    var phone = document.getElementById("form-phone").value;
     var item = {
         
         ID:id,
@@ -19,11 +30,11 @@ function add()
     let index = data.findIndex((c)=>c.ID==item.ID)
     if(index>=0)
     {
-        data.splice(index,1,item)
+        data.splice(index,1,item);
     }
     else
     {
-        data.push(item)
+        data.push(item);
     }
     render();
     clear();
@@ -58,13 +69,12 @@ function render(){
 
 function clear()
 {
-    var id = document.getElementById("form-id").value=""
-    var name = document.getElementById("form-name").value=""
-    var address = document.getElementById("form-address").value=""
-    var phone = document.getElementById("form-phone").value=""
+    var id = document.getElementById("form-id").value="";
+    var name = document.getElementById("form-name").value="";
+    var address = document.getElementById("form-address").value="";
+    var phone = document.getElementById("form-phone").value="";
 }
 
-//edit
 function editItem(x)
 {
     for(let i=0;i<data.length;i++)
@@ -72,14 +82,14 @@ function editItem(x)
         if(data[i].ID==x)
         {
             var id = document.getElementById("form-id").value=data[i].ID;
-            var name = document.getElementById("form-name").value=data[i].NAME
-            var address = document.getElementById("form-address").value=data[i].ADDRESS
-            var phone = document.getElementById("form-phone").value=data[i].PHONE
+            var name = document.getElementById("form-name").value=data[i].NAME;
+            var address = document.getElementById("form-address").value=data[i].ADDRESS;
+            var phone = document.getElementById("form-phone").value=data[i].PHONE;
         }
 
     }
 }
-//delete
+
 function deleteItem(x)
 {
     for(let i=0;i<data.length;i++)
@@ -87,7 +97,7 @@ function deleteItem(x)
         if(data[i].ID==x)
         {
             data.splice(i,1);
-            confirm("Bạn muốn xóa không!")
+            confirm("Bạn muốn xóa không!");
             render();
         }
     }

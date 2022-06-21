@@ -1,4 +1,20 @@
-var data=[];
+var data=[
+    {  
+        ID:"A01",
+        NAME:"Cam",
+        PRICE: "20.000đ/kg",
+        DESC:"30kg",
+        REFER:"40kg" 
+    },
+    {
+         
+        ID:"A02",
+        NAME:"Mận",
+        PRICE:"15.000đ/kg",
+        DESC:"100kg",
+        REFER:"50kg"
+    }
+];
 
 //add
 function add()

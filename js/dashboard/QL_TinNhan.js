@@ -1,13 +1,13 @@
 var data=[
     {
-        ID:"1",
+        ID:"B01",
         NAME:"Dũng",
         PHONE:0829214811,
         ADDRESS:"Nam Định",
         CONTENT:"Hàng ngon quá"
     },
     {
-        ID:"2",
+        ID:"C02",
         NAME:"Duy",
         PHONE:0829218888,
         ADDRESS:"Hà Nam",
@@ -18,11 +18,11 @@ var data=[
 //add
 function add()
 {
-    var id = document.getElementById("form-id").value
-    var name = document.getElementById("form-name").value
-    var phone = document.getElementById("form-phone").value
-    var address = document.getElementById("form-address").value
-    var content = document.getElementById("form-content").value
+    var id = document.getElementById("form-id").value;
+    var name = document.getElementById("form-name").value;
+    var phone = document.getElementById("form-phone").value;
+    var address = document.getElementById("form-address").value;
+    var content = document.getElementById("form-content").value;
 
     var item = {
         ID:id,
@@ -32,7 +32,7 @@ function add()
         CONTENT:content
     }
 
-    let index = data.findIndex((c)=>c.ID==item.ID)
+    let index = data.findIndex((c)=>c.ID==item.ID);
     if(index>=0)
     {
         data.splice(index,1,item)
@@ -77,15 +77,14 @@ function render()
 
 function clear()
 {
-    var id = document.getElementById("form-id").value=""
-    var name = document.getElementById("form-name").value=""
-    var phone = document.getElementById("form-phone").value=""
-    var address = document.getElementById("form-address").value=""
-    var content = document.getElementById("form-content").value=""
+    var id = document.getElementById("form-id").value="";
+    var name = document.getElementById("form-name").value="";
+    var phone = document.getElementById("form-phone").value="";
+    var address = document.getElementById("form-address").value="";
+    var content = document.getElementById("form-content").value="";
     
 }
 
-//edit
 function editItem(x)
 {
     for(let i=0;i<data.length;i++)
@@ -93,15 +92,15 @@ function editItem(x)
         if(data[i].ID==x)
         {
             var id = document.getElementById("form-id").value=data[i].ID;
-            var name = document.getElementById("form-name").value=data[i].NAME
-            var phone = document.getElementById("form-phone").value=data[i].PHONE
-            var address = document.getElementById("form-address").value=data[i].ADDRESS
-            var content = document.getElementById("form-content").value=data[i].CONTENT 
+            var name = document.getElementById("form-name").value=data[i].NAME;
+            var phone = document.getElementById("form-phone").value=data[i].PHONE;
+            var address = document.getElementById("form-address").value=data[i].ADDRESS;
+            var content = document.getElementById("form-content").value=data[i].CONTENT ;
         }
 
     }
 }
-//delete
+
 function deleteItem(x)
 {
     for(let i=0;i<data.length;i++)
@@ -109,7 +108,7 @@ function deleteItem(x)
         if(data[i].ID==x)
         {
             data.splice(i,1);
-            confirm("Bạn muốn xóa không!")
+            confirm("Bạn muốn xóa không!");
             render();
         }
     }

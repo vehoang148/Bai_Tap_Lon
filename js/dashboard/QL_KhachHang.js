@@ -1,10 +1,17 @@
 var data=[
     {
-        ID:12,
-        NAME:"name",
-        PHONE:1234,
-        EMAIL:"email",
-        ADDRESS:"address"
+        ID:"A04",
+        NAME:"Dũng",
+        PHONE:123456789,
+        EMAIL:"dung123@gmail.com",
+        ADDRESS:"Nam Định"
+    },
+    {
+        ID:"A08",
+        NAME:"Duy",
+        PHONE:0935374347,
+        EMAIL:"duy123@gmail.com",
+        ADDRESS:"Hà Nam"
     }
 ];
 
