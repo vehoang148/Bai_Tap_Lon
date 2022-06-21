@@ -377,7 +377,16 @@ a:focus {
   font-size: 15px;
 }
 /* end info */
+.fa-solid {
+  font-size: 40px;
+  color: #dd1818;
+  margin-top: 10px;
+  margin-left: 50%;
+}
+.fa-solid:hover{
+  color: blue;
 
+}
 /* footer */
 .footer_section {
   background-color: #efeded;

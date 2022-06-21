@@ -54,3 +54,13 @@ body {
 .nav-item .nav-link:hover{
   color: rgb(255, 0, 55);
 }
+
+.text-center{
+  background:linear-gradient(40deg,red,green,blue);
+}
+.form-signin input {
+    background-color: rgb(206, 175, 175);
+}
+.form-signin h3{
+  color: rgb(25, 126, 50);
+}

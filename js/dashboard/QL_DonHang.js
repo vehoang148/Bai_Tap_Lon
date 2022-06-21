@@ -142,5 +142,60 @@ function deleteItem(x)
 function search()
 {
     var search = document.getElementById("search-input").value;
-};
+    var list = this.data;
+    var kq=[];
+    if(search)
+    {
+        for(let i=0;i<list.length;i++)
+        {
+            var str = list[i].NAME;
+            if(str.includes(search))
+            {
+                document.getElementById("renderSearch").style.display = "block";
+                document.getElementById("render").style.display = "none";
+                var itemSearch = 
+                {
+                    ID:list[i].ID,
+                    NAME:list[i].NAME,
+                    COMPANY:list[i].COMPANY,
+                    AMOUNT:list[i].AMOUNT,
+                    PRICE:list[i].PRICE,
+                    PHONE:list[i].PHONE,
+                    ADDRESS:list[i].ADDRESS
+                }
+                kq.push(itemSearch);               
+                table = `<tr>
+                <th>Stt</th>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Mua</th>
+                <th>Số Lượng</th>
+                <th>Thành Tiền</th>
+                <th>Số Điện Thoại</th>
+                <th>Địa Chỉ</th>
+                <th>Sửa</th>
+                <th>Xóa</th>
+                </tr>`
+                for(let i=0;i<kq.length;i++)
+                {
+                    let order = 1;
+                    table += `<tr>
+                      <td>${order++}</td>
+                      <td>${kq[i].ID}</td>
+                      <td>${kq[i].NAME}</td>
+                      <td>${kq[i].COMPANY}</td>
+                      <td>${kq[i].AMOUNT}/kg</td>
+                      <td>${kq[i].PRICE}/đ</td>
+                      <td>${kq[i].PHONE}</td>
+                      <td>${kq[i].ADDRESS}</td>
+                      <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
+                      <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>
+                    </tr>`
+                }
+                document.getElementById("renderSearch").innerHTML = table;
+            }
+        }
+    }
+}
+
 
