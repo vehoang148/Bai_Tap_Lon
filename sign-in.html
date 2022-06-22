@@ -55,6 +55,7 @@
     {
         alert("Tài Khoản Chưa Đăng Ký !");
     }
+    //tk dùng để đăng nhập quản lý
     else if(email == "admin@gmail.com" && password == "123" 
           || email == "admin1@gmail.com" && password == "123"
           || email == "admin2@gmail.com" && password == "123")
@@ -62,6 +63,7 @@
       alert("Đăng Nhập Quản Trị Thành Công !");
       window.location.href = "./dashboard/admin.html";
     }
+    //đăng nhập khách hàng
     else if(email == data.email && password == data.password)
     {
         alert("Đăng Nhập Thành Công !");
