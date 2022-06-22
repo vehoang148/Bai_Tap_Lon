@@ -1,40 +1,36 @@
 var data=[
-    {
-        ID:"A04",
+    { 
+        ID:"3",
         NAME:"Dũng",
-        PHONE:123456789,
-        EMAIL:"dung123@gmail.com",
-        ADDRESS:"Nam Định"
+        PHONE:"09292922",
+        EMAIL:"dung@gmail.com",
+        ADDRESS:"Hà Nội"
     },
-    {
-        ID:"A08",
+    { 
+        ID:"23",
         NAME:"Duy",
-        PHONE:0935374347,
-        EMAIL:"duy123@gmail.com",
-        ADDRESS:"Hà Nam"
-    }
+        PHONE:"2213123",
+        EMAIL:"dun233g@gmail.com",
+        ADDRESS:"Hà Nội"
+    },
 ];
-
 //add
 function add()
 {
     var id = document.getElementById("form-id").value
     var name = document.getElementById("form-name").value
     var phone = document.getElementById("form-phone").value
-    var email = document.getElementById("form-email").value
     var address = document.getElementById("form-address").value
-    
-
-    var item = {
-        
+    var email = document.getElementById("form-email").value
+    var item = 
+    {  
         ID:id,
         NAME:name,
         PHONE:phone,
         EMAIL:email,
         ADDRESS:address
-    }
-
-    let index = data.findIndex((c)=>c.ID==item.ID)
+    }        
+    var index = data.findIndex((c)=>c.ID==item.ID)
     if(index>=0)
     {
         data.splice(index,1,item)
@@ -50,7 +46,7 @@ function add()
 function render(){
     let order = 1;
     table = `<tr>
-    <th>STT</th>
+    <th>Stt</th>
     <th>Mã</th>
     <th>Tên</th>
     <th>Số Điện Thoại</th>
@@ -62,7 +58,7 @@ function render(){
     for(let i=0;i<data.length;i++)
     {
         table += `<tr>
-        <td>${order++}</td>
+          <td>${order++}</td>
           <td>${data[i].ID}</td>
           <td>${data[i].NAME}</td>
           <td>${data[i].PHONE}</td>
@@ -82,7 +78,6 @@ function clear()
     var phone = document.getElementById("form-phone").value=""
     var email = document.getElementById("form-email").value=""
     var address = document.getElementById("form-address").value=""
-    
 }
 
 //edit
@@ -92,13 +87,12 @@ function editItem(x)
     {
         if(data[i].ID==x)
         {
-            var id = document.getElementById("form-id").value=data[i].ID;
+            var id = document.getElementById("form-id").value=data[i].ID
             var name = document.getElementById("form-name").value=data[i].NAME
             var phone = document.getElementById("form-phone").value=data[i].PHONE
             var email = document.getElementById("form-email").value=data[i].EMAIL
             var address = document.getElementById("form-address").value=data[i].ADDRESS
         }
-
     }
 }
 //delete
@@ -114,7 +108,7 @@ function deleteItem(x)
         }
     }
 }
-
+//search
 function search()
 {
     var search = document.getElementById("search-input").value;
@@ -138,9 +132,8 @@ function search()
                     ADDRESS:list[i].ADDRESS
                 }
                 kq.push(itemSearch);               
-                let order = 1;
                 table = `<tr>
-                <th>STT</th>
+                <th>Stt</th>
                 <th>Mã</th>
                 <th>Tên</th>
                 <th>Số Điện Thoại</th>
@@ -153,11 +146,11 @@ function search()
                 {
                     let order = 1;
                     table += `<tr>
-                    <td>${order++}</td>
+                      <td>${order++}</td>
                       <td>${kq[i].ID}</td>
                       <td>${kq[i].NAME}</td>
-                      <td>${kq[i].PHONE}</td>
                       <td>${kq[i].EMAIL}</td>
+                      <td>${kq[i].PHONE}</td>
                       <td>${kq[i].ADDRESS}</td>
                       <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
                       <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>

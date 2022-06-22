@@ -18,9 +18,11 @@ html{
 	height: 200px;
 	background-color: rgb(83, 134, 6);
 }
+
 .shopping-cart .summary button:hover{
 	background-color: brown;
 }
+
 .shopping-cart .container .block-heading{
 	color: blue;
 }

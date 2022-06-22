@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
   <link rel="stylesheet" href="font/css/all.min.css">
 </head>
 
@@ -42,7 +42,7 @@
               </a>
             </div>
             <div class="topnav">
-              <input type="text" placeholder="Search..">
+              <input type="text" placeholder="Search...">
             </div>
             <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
               <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
@@ -58,7 +58,7 @@
     <!-- end header  -->
 
     <!-- slider -->
-    <section class=" slider_section position-relative">
+    <section class="slider_section position-relative">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -87,7 +87,7 @@
                     <div class="col-md-6">
                       <div class="slider_img-box">
                         <div>
-                          <img src="images/slide-img.png" alt="" class="" />
+                          <img src="images/slide-img.png"/>
                         </div>
                       </div>
                     </div>
@@ -99,8 +99,6 @@
         </div>
     </section>
     <!-- end slider  -->
-
-  </div>
 
   <!-- service -->
   <section class="service_section layout_padding ">
@@ -159,7 +157,7 @@
               trung bình của một người trong một ngày. Cam cũng chứa vitamin A, calci và chất xơ...
             </p>
             <div>
-              <a href="cart.html" class="custom_dark-btn" style="background-color: rgb(6, 105, 6);">
+              <a href="cart.html" class="custom_dark-btn" style="background-color: rgb(6, 105, 6);text-decoration: none;">
                 Mua Ngay
               </a>
             </div>
@@ -182,7 +180,7 @@
               ung thư và bệnh tim, phòng chỗng cảm lạnh, xóa nếp nhăn, làm trắng rang, ngừa loãng xương...
             </p>
             <div>
-              <a href="cart.html" class="custom_dark-btn" style="background-color: rgb(6, 105, 6);">
+              <a href="cart.html" class="custom_dark-btn" style="background-color: rgb(6, 105, 6);text-decoration: none;">
                 Mua Ngay
               </a>
             </div>
@@ -205,7 +203,7 @@
               Hàm lượng vitamin C cao trong quả ổi hơn đáng kể so với trong cam. Quả ổi cũng giàu pectin.
             </p>
             <div>
-              <a href="cart.html" class="custom_dark-btn" style="background-color: rgb(6,105,6);">
+              <a href="cart.html" class="custom_dark-btn" style="background-color: rgb(6,105,6);text-decoration: none;">
                 Mua Ngay
               </a>
             </div>
@@ -238,7 +236,7 @@
   <!-- end tasty -->
 
   <!-- client -->
-  <section class="client_section layout_padding">
+  <section class="client_container layout_padding">
     <div class="container">
       <h2 class="custom_heading">Thành Viên Sáng Lập</h2>
       <div>
@@ -248,16 +246,12 @@
                   <img src="images/Vo-Tong.jpg" alt="" />
                 </div>
                 <div class="client_detail">
-                  <h3>
-                    Hoàng Đình Dũng
-                  </h3>
-                  <p class="custom_heading-text">
-                    2051063940 - 62PM2
-                  </p>
+                  <h3>Hoàng Đình Dũng</h3>
+                  <p class="custom_heading-text">2051063940 - 62PM2</p>
+                </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
   <!-- end client -->
 
@@ -301,11 +295,11 @@
   
   <!--map-->
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29918.540733939088!2d106.17648817095348!3d20.390409452904027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135e0e60643b859%3A0x18c4c78d3d3c7159!2zTmFtIFRvw6BuLCBUcC4gTmFtIMSQ4buLbmgsIE5hbSDEkOG7i25oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1655179229152!5m2!1svi!2s" 
-  width="100%"
-  height="400px" 
-  style="border-radius: 60px;" 
-  allowfullscreen="" loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
+      width="100%"
+      height="400px" 
+      style="border-radius: 60px;" 
+      allowfullscreen="" loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
   </iframe>
   <!--end map-->
   <p></p>
@@ -377,7 +371,7 @@
               Đăng ký ngay
             </h5>
             <div class="form_container">
-              <form action="">
+              <form>
                 <input type="email">
                 <button type="submit">
                   Đăng Ký
@@ -398,9 +392,7 @@
     </p>
   </section>
   <!--end footer-->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 </body>
-
 </html>

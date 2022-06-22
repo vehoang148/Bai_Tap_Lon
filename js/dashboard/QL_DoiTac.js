@@ -1,105 +1,97 @@
 var data=[
     {
-        ID:"D21",
-        NAME:"Thành",
-        ADDRESS:"Hà Nam",
-        PHONE:939238219
-    },
-    {
-        ID:"S13",
+        ID:"100",
         NAME:"Duy",
-        ADDRESS:"Nam Hà",
-        PHONE:7239172397
+        PHONE:"09292922",
+        ADDRESS:"Hà Nam"
     },
     {
-        ID:"A13",
+        ID:"62",
         NAME:"Dũng",
-        ADDRESS:"Nam Hà",
-        PHONE:239172397
+        PHONE:"34343434535",
+        ADDRESS:"Hà Nam"
     },
     {
-        ID:"D13",
-        NAME:"Thanh",
-        ADDRESS:"Nam Hà",
-        PHONE:339172397
+        ID:"41",
+        NAME:"Dung",
+        PHONE:"3434343",
+        ADDRESS:"Hà Nam"
     },
-
 ];
-//thêm
+//add
 function add()
 {
-    var id = document.getElementById("form-id").value;
-    var name = document.getElementById("form-name").value;
-    var address = document.getElementById("form-address").value;
-    var phone = document.getElementById("form-phone").value;
-    var item = {
-        
+    var id = document.getElementById("form-id").value
+    var name = document.getElementById("form-name").value
+    var phone = document.getElementById("form-phone").value
+    var address = document.getElementById("form-address").value
+
+    var item = 
+    {  
         ID:id,
         NAME:name,
-        ADDRESS:address,
-        PHONE:phone
-    }
-
-    let index = data.findIndex((c)=>c.ID==item.ID)
+        PHONE:phone,
+        ADDRESS:address
+    }        
+    var index = data.findIndex((c)=>c.ID==item.ID)
     if(index>=0)
     {
-        data.splice(index,1,item);
+        data.splice(index,1,item)
     }
     else
     {
-        data.push(item);
+        data.push(item)
     }
     render();
     clear();
 }
-//show
+
 function render(){
     let order = 1;
-
     table = `<tr>
-    <th>STT</th>
+    <th>Stt</th>
     <th>Mã</th>
     <th>Tên</th>
-    <th>Địa Chỉ</th>
     <th>Số Điện Thoại</th>
+    <th>Địa Chỉ</th>
     <th>Sửa</th>
     <th>Xóa</th>
     </tr>`
     for(let i=0;i<data.length;i++)
     {
         table += `<tr>
-        <td>${order++}</td>
+          <td>${order++}</td>
           <td>${data[i].ID}</td>
           <td>${data[i].NAME}</td>
-          <td>${data[i].ADDRESS}</td>
           <td>${data[i].PHONE}</td>
+          <td>${data[i].ADDRESS}</td>
           <th><button onclick="editItem(${data[i].ID})">SỬA</button></th>
           <th><button onclick="deleteItem(${data[i].ID})">XÓA</button></th>
         </tr>`
     }
     document.getElementById("render").innerHTML = table;
 }
-//
+
 function clear()
 {
-    var id = document.getElementById("form-id").value="";
-    var name = document.getElementById("form-name").value="";
-    var address = document.getElementById("form-address").value="";
-    var phone = document.getElementById("form-phone").value="";
+    var id = document.getElementById("form-id").value=""
+    var name = document.getElementById("form-name").value=""
+    var phone = document.getElementById("form-phone").value=""
+    var address = document.getElementById("form-address").value=""
 }
-//sửa
+
+//edit
 function editItem(x)
 {
     for(let i=0;i<data.length;i++)
     {
         if(data[i].ID==x)
         {
-            var id = document.getElementById("form-id").value=data[i].ID;
-            var name = document.getElementById("form-name").value=data[i].NAME;
-            var address = document.getElementById("form-address").value=data[i].ADDRESS;
-            var phone = document.getElementById("form-phone").value=data[i].PHONE;
+            var id = document.getElementById("form-id").value=data[i].ID
+            var name = document.getElementById("form-name").value=data[i].NAME
+            var phone = document.getElementById("form-phone").value=data[i].PHONE
+            var address = document.getElementById("form-address").value=data[i].ADDRESS
         }
-
     }
 }
 //delete
@@ -110,12 +102,12 @@ function deleteItem(x)
         if(data[i].ID==x)
         {
             data.splice(i,1);
-            confirm("Bạn muốn xóa không!");
+            confirm("Bạn muốn xóa không!")
             render();
         }
     }
 }
-//tìm kiếm
+//search
 function search()
 {
     var search = document.getElementById("search-input").value;
@@ -134,16 +126,16 @@ function search()
                 {
                     ID:list[i].ID,
                     NAME:list[i].NAME,
-                    ADDRESS:list[i].ADDRESS,
-                    PHONE:list[i].PHONE
+                    PHONE:list[i].PHONE,
+                    ADDRESS:list[i].ADDRESS
                 }
                 kq.push(itemSearch);               
                 table = `<tr>
-                <th>STT</th>
+                <th>Stt</th>
                 <th>Mã</th>
                 <th>Tên</th>
-                <th>Địa Chỉ</th>
                 <th>Số Điện Thoại</th>
+                <th>Địa Chỉ</th>
                 <th>Sửa</th>
                 <th>Xóa</th>
                 </tr>`
@@ -151,13 +143,13 @@ function search()
                 {
                     let order = 1;
                     table += `<tr>
-                    <td>${order++}</td>
-                    <td>${kq[i].ID}</td>
-                    <td>${kq[i].NAME}</td>
-                    <td>${kq[i].ADDRESS}</td>
-                    <td>${kq[i].PHONE}</td>
-                    <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
-                    <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>
+                      <td>${order++}</td>
+                      <td>${kq[i].ID}</td>
+                      <td>${kq[i].NAME}</td>
+                      <td>${kq[i].PHONE}</td>
+                      <td>${kq[i].ADDRESS}</td>
+                      <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
+                      <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>
                     </tr>`
                 }
                 document.getElementById("renderSearch").innerHTML = table;
@@ -165,4 +157,5 @@ function search()
         }
     }
 }
+
 

@@ -1,6 +1,6 @@
 var data=[
     { 
-        ID:"1",
+        ID:"12",
         NAME:"Duy",
         COMPANY:"Cam",
         AMOUNT:2,
@@ -9,8 +9,8 @@ var data=[
         ADDRESS:"Hà Nam"
     },
     { 
-        ID:"2",
-        NAME:"Dũng",
+        ID:"25",
+        NAME:"Thành",
         COMPANY:"Táo",
         AMOUNT:3,
         PRICE:30000,
@@ -18,16 +18,15 @@ var data=[
         ADDRESS:"Nam Định"
     },
     { 
-        ID:"3",
+        ID:"35",
         NAME:"Dũng",
         COMPANY:"Táo",
         AMOUNT:1.5,
         PRICE:25000,
         PHONE:"09292922",
         ADDRESS:"Hà Nội"
-    },
+    }
 ];
-
 //add
 function add()
 {
@@ -38,7 +37,6 @@ function add()
     var address = document.getElementById("form-address").value
     var company = document.getElementById("form-company").value
     var amount = document.getElementById("form-amount").value
-
     var item = 
     {  
         ID:id,
@@ -108,12 +106,11 @@ function clear()
 //edit
 function editItem(x)
 {
-    
     for(let i=0;i<data.length;i++)
     {
         if(data[i].ID==x)
         {
-            var id = document.getElementById("form-id").value=data[i].ID;
+            var id = document.getElementById("form-id").value=data[i].ID
             var name = document.getElementById("form-name").value=data[i].NAME
             var company = document.getElementById("form-company").value=data[i].COMPANY
             var amount = document.getElementById("form-amount").value=data[i].AMOUNT        
@@ -121,7 +118,6 @@ function editItem(x)
             var phone = document.getElementById("form-phone").value=data[i].PHONE
             var address = document.getElementById("form-address").value=data[i].ADDRESS
         }
-
     }
 }
 //delete
@@ -136,7 +132,6 @@ function deleteItem(x)
             render();
         }
     }
-    clear();
 }
 //search
 function search()

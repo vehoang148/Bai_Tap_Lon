@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Ký</title>
+    <title>ĐĂNG KÝ</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -43,17 +43,17 @@
                 <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Đăng Ký</button>
                 <ul class="navbar-nav" style="margin-left: 30%;color: rgb(60, 9, 201);">
                   <li class="nav-item ">
-                    <a class="nav-link" href="sign-in.html" style="font-size: 20px;">---> Đăng Nhập <---</a>
+                    <a class="nav-link" href="sign-in.html" style="font-size: 20px; margin-left: 13%;">Đăng Nhập</a>
                   </li>
                 </ul>
                 <hr>
                 <h2 class="fs-5 fw-bold mb-3">Sử Dụng Bên Thứ 3</h2>
                 <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#facebook"/></svg>
+                  <svg class="bi me-1" width="16" height="16"><use/></svg>
                   Đăng Ký Bằng Facebook
                 </button>
                 <button class="w-100 py-2 mb-2 btn btn-outline-success rounded-3" type="submit">
-                  <svg class="bi me-1" width="16" height="16"><use xlink:href="#google"/></svg>
+                  <svg class="bi me-1" width="16" height="16"><use/></svg>
                   Đăng Ký Bằng Google
                 </button>
               </form>
@@ -71,7 +71,7 @@
         password:password
     };
     var json = JSON.stringify(user);
-    if(email == json.email && password == json.password)
+    if(email == json.email || password == json.password)
     {
       alert("Tài khoản này đã tồn tại !");
     }
@@ -79,7 +79,7 @@
     {
       localStorage.setItem(email, json);
       alert("Đăng ký thành công !");  
-    }  
+    }
 }
 </script>
 <script src="js/bootstrap.js"></script>

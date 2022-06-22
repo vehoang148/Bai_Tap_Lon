@@ -1,21 +1,20 @@
 var data=[
-    {  
-        ID:"A01",
-        NAME:"Cam",
-        PRICE: "20.000đ/kg",
-        DESC:"30kg",
-        REFER:"40kg" 
-    },
-    {
-         
-        ID:"A02",
+    { 
+        ID:"29",
         NAME:"Mận",
-        PRICE:"15.000đ/kg",
-        DESC:"100kg",
-        REFER:"50kg"
-    }
+        PRICE:20000,
+        DESC:23,
+        REFER:30
+    },
+    { 
+        ID:"12",
+        NAME:"Cam",
+        PRICE:20000,
+        DESC:23,
+        REFER:30
+    },
+    
 ];
-
 //add
 function add()
 {
@@ -24,17 +23,15 @@ function add()
     var price = document.getElementById("form-price").value
     var desc = document.getElementById("form-desc").value
     var refer = document.getElementById("form-refer").value
-
-    var item = {
-        
+    var item = 
+    {  
         ID:id,
         NAME:name,
         PRICE:price,
         DESC:desc,
         REFER:refer
-    }
-
-    let index = data.findIndex((c)=>c.ID==item.ID)
+    }        
+    var index = data.findIndex((c)=>c.ID==item.ID)
     if(index>=0)
     {
         data.splice(index,1,item)
@@ -50,10 +47,10 @@ function add()
 function render(){
     let order = 1;
     table = `<tr>
-    <th>STT</th>
+    <th>Stt</th>
     <th>Mã</th>
-    <th>Tên Sản Phẩm</th>
-    <th>Giá tiền</th>
+    <th>Tên Sản Phẩm</th> 
+    <th>Giá Tiền</th>
     <th>Số Lượng Nhập</th>
     <th>Số Lượng Tồn</th>
     <th>Sửa</th>
@@ -65,9 +62,9 @@ function render(){
           <td>${order++}</td>
           <td>${data[i].ID}</td>
           <td>${data[i].NAME}</td>
-          <td>${data[i].PRICE}</td>
-          <td>${data[i].DESC}</td>
-          <td>${data[i].REFER}</td>
+          <td>${data[i].PRICE}/đ</td>
+          <td>${data[i].DESC}/kg</td>
+          <td>${data[i].REFER}/kg</td>
           <th><button onclick="editItem(${data[i].ID})">SỬA</button></th>
           <th><button onclick="deleteItem(${data[i].ID})">XÓA</button></th>
         </tr>`
@@ -82,7 +79,6 @@ function clear()
     var price = document.getElementById("form-price").value=""
     var desc = document.getElementById("form-desc").value=""
     var refer = document.getElementById("form-refer").value=""
-
 }
 
 //edit
@@ -92,13 +88,12 @@ function editItem(x)
     {
         if(data[i].ID==x)
         {
-            var id = document.getElementById("form-id").value=data[i].ID;
+            var id = document.getElementById("form-id").value=data[i].ID
             var name = document.getElementById("form-name").value=data[i].NAME
             var price = document.getElementById("form-price").value=data[i].PRICE
             var desc = document.getElementById("form-desc").value=data[i].DESC
             var refer = document.getElementById("form-refer").value=data[i].REFER
         }
-
     }
 }
 //delete
@@ -114,7 +109,7 @@ function deleteItem(x)
         }
     }
 }
-
+//search
 function search()
 {
     var search = document.getElementById("search-input").value;
@@ -137,13 +132,13 @@ function search()
                     DESC:list[i].DESC,
                     REFER:list[i].REFER
                 }
-                kq.push(itemSearch);
+                kq.push(itemSearch);               
                 let order = 1;
                 table = `<tr>
-                <th>STT</th>
+                <th>Stt</th>
                 <th>Mã</th>
-                <th>Tên Sản Phẩm</th>
-                <th>Giá tiền</th>
+                <th>Tên Sản Phẩm</th> 
+                <th>Giá Tiền</th>
                 <th>Số Lượng Nhập</th>
                 <th>Số Lượng Tồn</th>
                 <th>Sửa</th>
@@ -152,20 +147,20 @@ function search()
                 for(let i=0;i<kq.length;i++)
                 {
                     table += `<tr>
-                    <td>${order++}</td>
-                    <td>${kq[i].ID}</td>
-                    <td>${kq[i].NAME}</td>
-                    <td>${kq[i].PRICE}</td>
-                    <td>${kq[i].DESC}</td>
-                    <td>${kq[i].REFER}</td>
-                    <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
-                    <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>
-                  </tr>`
+                      <td>${order++}</td>
+                      <td>${kq[i].ID}</td>
+                      <td>${kq[i].NAME}</td>
+                      <td>${kq[i].PRICE}/đ</td>
+                      <td>${kq[i].DESC}</td>
+                      <td>${kq[i].REFER}</td>
+                      <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
+                      <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>
+                    </tr>`
                 }
-              document.getElementById("renderSearch").innerHTML = table;
-       
+                document.getElementById("renderSearch").innerHTML = table;
             }
         }
     }
 }
+
 
