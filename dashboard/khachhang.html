@@ -97,10 +97,24 @@
               DANH SÁCH KHÁCH HÀNG
             </div>
             <div class="mt-2"> 
-              <input type="text" placeholder="  Tìm Kiếm Theo Tên" id="search-input" class="form-check-inline" required>
+              <input type="text" placeholder="Tìm Kiếm Theo Tên" id="search-input" class="form-check-inline" required>
               <button onclick="search()" class="btn btn-dark" style="margin-left: 1%;width: 100px;font-size: 12px;" >Tìm Kiếm</button>
             </div>
             <table class="table table-bordered mt-2" id="render">
+              <thead>
+                <tr>
+                  <th>STT</th>
+                  <th>Mã</th>
+                  <th>Tên</th>
+                  <th>Số Điện Thoại</th>
+                  <th>Email</th>
+                  <th>Địa Chỉ</th>
+                  <th>Sửa</th>
+                  <th>Xóa</th>
+                </tr>
+              </thead>
+            </table>
+            <table class="table table-bordered mt-2" id="renderSearch" style="display: none;">
               <thead>
                 <tr>
                   <th>STT</th>

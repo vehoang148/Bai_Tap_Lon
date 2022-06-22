@@ -48,7 +48,7 @@ function add()
 }
 
 function render(){
-    let order =1;
+    let order = 1;
     table = `<tr>
     <th>STT</th>
     <th>Mã</th>
@@ -114,4 +114,59 @@ function deleteItem(x)
         }
     }
 }
+
+function search()
+{
+    var search = document.getElementById("search-input").value;
+    var list = this.data;
+    var kq=[];
+    if(search)
+    {
+        for(let i=0;i<list.length;i++)
+        {
+            var str = list[i].NAME;
+            if(str.includes(search))
+            {
+                document.getElementById("renderSearch").style.display = "block";
+                document.getElementById("render").style.display = "none";
+                var itemSearch = 
+                {
+                    ID:list[i].ID,
+                    NAME:list[i].NAME,
+                    PHONE:list[i].PHONE,
+                    EMAIL:list[i].EMAIL,
+                    ADDRESS:list[i].ADDRESS
+                }
+                kq.push(itemSearch);               
+                let order = 1;
+                table = `<tr>
+                <th>STT</th>
+                <th>Mã</th>
+                <th>Tên</th>
+                <th>Số Điện Thoại</th>
+                <th>Email</th>
+                <th>Địa Chỉ</th>
+                <th>Sửa</th>
+                <th>Xóa</th>
+                </tr>`
+                for(let i=0;i<kq.length;i++)
+                {
+                    let order = 1;
+                    table += `<tr>
+                    <td>${order++}</td>
+                      <td>${kq[i].ID}</td>
+                      <td>${kq[i].NAME}</td>
+                      <td>${kq[i].PHONE}</td>
+                      <td>${kq[i].EMAIL}</td>
+                      <td>${kq[i].ADDRESS}</td>
+                      <th><button onclick="editItem(${kq[i].ID})">SỬA</button></th>
+                      <th><button onclick="deleteItem(${kq[i].ID})">XÓA</button></th>
+                    </tr>`
+                }
+                document.getElementById("renderSearch").innerHTML = table;
+            }
+        }
+    }
+}
+
 
