@@ -126,12 +126,14 @@ function deleteItem(x)
     for(let i=0;i<data.length;i++)
     {
         if(data[i].ID==x)
-        {
-            data.splice(i,1);
-            confirm("Bạn muốn xóa không!")
-            render();
+        {  
+            var abc = confirm("Bạn muốn xóa không!")
+            if(!abc) return
+            data.splice(i,1); 
         }
+        
     }
+    render();
 }
 //search
 function search()

@@ -121,6 +121,12 @@ a:focus {
   margin-left: 20px;
 }
 
+/*phan nut menu*/
+.custom_nav-container .navbar-toggler .navbar-toggler-icon {
+  background-image: url(../images/menu.png);
+  background-size: 55px;
+}
+
 /*logo*/
 .navbar-brand img {
   width: 55px;
@@ -141,8 +147,11 @@ a:focus {
   color: #f7f7f7;
   font-size: 16px;
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 40px;
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
+
 .quote_btn-container a:hover{
   background-color: burlywood;
   text-decoration: none;
@@ -176,6 +185,7 @@ a:focus {
   padding: 0;
   border: none;
 }
+
 /*end header */
 
 /* slider */
